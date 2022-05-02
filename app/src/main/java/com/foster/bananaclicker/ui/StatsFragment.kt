@@ -1,4 +1,4 @@
-package com.foster.bananaclicker.ui.dashboard
+package com.foster.bananaclicker.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,12 +9,12 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.foster.bananaclicker.R
-import com.foster.bananaclicker.databinding.FragmentDashboardBinding
 
-class DashboardFragment : Fragment() {
+import com.foster.bananaclicker.databinding.FragmentStatsBinding
 
-    private lateinit var dashboardViewModel: DashboardViewModel
-    private var _binding: FragmentDashboardBinding? = null
+class StatsFragment : Fragment() {
+
+    private var _binding: FragmentStatsBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -25,16 +25,11 @@ class DashboardFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        dashboardViewModel =
-            ViewModelProvider(this).get(DashboardViewModel::class.java)
 
-        _binding = FragmentDashboardBinding.inflate(inflater, container, false)
+        _binding = FragmentStatsBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textDashboard
-        dashboardViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
+
         return root
     }
 

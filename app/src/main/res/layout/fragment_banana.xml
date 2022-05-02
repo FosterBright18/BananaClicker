@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.home.HomeFragment">
+
+    <ImageView
+        android:id="@+id/imageView_banana_banana"
+        android:layout_width="210dp"
+        android:layout_height="162dp"
+        android:src="@drawable/banana2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/imageView_banana_monkey"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/monkey"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView_banana_banana" />
+
+    <TextView
+        android:id="@+id/textView_banana_monkeyDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Monkey\nGives 1 banana per second \nYou currently have:"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView_banana_monkey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView_banana_monkey"
+        app:layout_constraintTop_toTopOf="@+id/imageView_banana_monkey" />
+
+    <ImageView
+        android:id="@+id/imageView_banana_BananaTree"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/bananatree"
+        app:layout_constraintEnd_toEndOf="@+id/imageView_banana_monkey"
+        app:layout_constraintStart_toStartOf="@+id/imageView_banana_monkey"
+        app:layout_constraintTop_toBottomOf="@+id/imageView_banana_monkey" />
+
+    <TextView
+        android:id="@+id/textView_banana_treedesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Banana Tree\nGives 5 bananas per second\nYou currently have: "
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView_banana_BananaTree"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView_banana_BananaTree"
+        app:layout_constraintTop_toTopOf="@+id/imageView_banana_BananaTree" />
+
+    <ImageView
+        android:id="@+id/imageView_banana_bananaCow"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/bananacow"
+        app:layout_constraintEnd_toEndOf="@+id/imageView_banana_BananaTree"
+        app:layout_constraintStart_toStartOf="@+id/imageView_banana_BananaTree"
+        app:layout_constraintTop_toBottomOf="@+id/imageView_banana_BananaTree" />
+
+    <TextView
+        android:id="@+id/textView_banana_BananaCowDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Banana Cow\nGives 100 bananas per second\nYou currently have:"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView_banana_bananaCow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView_banana_bananaCow"
+        app:layout_constraintTop_toTopOf="@+id/imageView_banana_bananaCow" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
