@@ -28,7 +28,7 @@ class UpgradesFragment : Fragment() {
         _binding = FragmentUpgradesBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textDashboard
+
         return root
     }
 

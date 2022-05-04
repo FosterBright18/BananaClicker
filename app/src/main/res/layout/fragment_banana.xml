@@ -30,8 +30,10 @@
 
     <TextView
         android:id="@+id/textView_banana_monkeyDesc"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:text="Monkey\nGives 1 banana per second \nYou currently have:"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView_banana_monkey"
@@ -51,8 +53,10 @@
 
     <TextView
         android:id="@+id/textView_banana_treedesc"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:text="Banana Tree\nGives 5 bananas per second\nYou currently have: "
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView_banana_BananaTree"
@@ -72,8 +76,10 @@
 
     <TextView
         android:id="@+id/textView_banana_BananaCowDesc"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:text="Banana Cow\nGives 100 bananas per second\nYou currently have:"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView_banana_bananaCow"

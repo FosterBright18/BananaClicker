@@ -6,17 +6,109 @@
     android:layout_height="match_parent"
     tools:context=".ui.UpgradesFragment">
 
-    <TextView
-        android:id="@+id/text_dashboard"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+    <ImageView
+        android:id="@+id/imageView_upgrades_tree"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_marginStart="24dp"
+        android:src="@drawable/bananatree"
+        android:tint="#FF0000"
+        android:tintMode="multiply"
+        app:layout_constraintBottom_toTopOf="@+id/imageView_upgrades_cow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView_upgrades_monkey" />
+
+    <ImageView
+        android:id="@+id/imageView_upgrades_banana"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_marginStart="24dp"
+        android:src="@drawable/banana2"
+        android:tint="#FF0000"
+        android:tintMode="multiply"
+        app:layout_constraintBottom_toTopOf="@+id/imageView_upgrades_monkey"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView_upgrades_monkey"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_marginStart="24dp"
+        android:src="@drawable/monkey"
+        android:tint="#FF0000"
+        android:tintMode="multiply"
+        app:layout_constraintBottom_toTopOf="@+id/imageView_upgrades_tree"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView_upgrades_banana" />
+
+    <ImageView
+        android:id="@+id/imageView_upgrades_cow"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="50dp"
+        android:src="@drawable/bananacow"
+        android:tint="#FF0000"
+        android:tintMode="multiply"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView_upgrades_tree" />
+
+    <TextView
+        android:id="@+id/textView_upgrades_bananaDesc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Banana clicks give twice as many bananas"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView_upgrades_banana"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageView_upgrades_banana"
+        app:layout_constraintTop_toTopOf="@+id/imageView_upgrades_banana" />
+
+    <TextView
+        android:id="@+id/textView_upgrades_mopnkeyDesc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Monkey production is twice as efficient"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView_upgrades_monkey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageView_upgrades_monkey"
+        app:layout_constraintTop_toTopOf="@+id/imageView_upgrades_monkey" />
+
+    <TextView
+        android:id="@+id/textView_upgrades_treeDesc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Banana tree production is twice as efficient"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView_upgrades_tree"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageView_upgrades_tree"
+        app:layout_constraintTop_toTopOf="@+id/imageView_upgrades_tree" />
+
+    <TextView
+        android:id="@+id/textView_upgrades_cowDesc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Banana cow production is twice as efficient"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView_upgrades_cow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageView_upgrades_cow"
+        app:layout_constraintTop_toTopOf="@+id/imageView_upgrades_cow" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
