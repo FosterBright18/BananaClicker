@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.foster.bananaclicker.MainActivity
 import com.foster.bananaclicker.databinding.FragmentLeaderboardBinding
 
 
@@ -28,9 +29,17 @@ class LeaderboardFragment : Fragment() {
         _binding = FragmentLeaderboardBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-
+        var mainActivity = activity as MainActivity
+        mainActivity.getScores()
 
         return root
+    }
+
+    override fun onResume() {
+        super.onResume()
+        var mainActivity = requireActivity() as MainActivity
+        mainActivity.supportActionBar?.title = "${mainActivity.bananas} bananas"
+
     }
 
     override fun onDestroyView() {

@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.foster.bananaclicker.MainActivity
 import com.foster.bananaclicker.R
 
 import com.foster.bananaclicker.databinding.FragmentStatsBinding
@@ -58,8 +59,12 @@ class StatsFragment : Fragment() {
     }
 
 
+    override fun onResume() {
+        super.onResume()
+        var mainActivity = requireActivity() as MainActivity
+        mainActivity.supportActionBar?.title = "${mainActivity.bananas} bananas"
 
-
+    }
 
     private fun initLineChart() {
 
