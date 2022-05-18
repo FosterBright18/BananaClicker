@@ -5,6 +5,7 @@
       <map>
         <entry key="app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.2557291666666667" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.2557291666666667" />
+        <entry key="app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.2557291666666667" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.31521739130434784" />
         <entry key="app/src/main/res/layout/fragment_banana.xml" value="0.30932971014492755" />
         <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.31521739130434784" />

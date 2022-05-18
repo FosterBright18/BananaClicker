@@ -1,6 +1,8 @@
 package com.foster.bananaclicker
 
 import android.os.Bundle
+import android.text.SpannableStringBuilder
+import android.text.style.ImageSpan
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -15,6 +17,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private var scores : MutableList<Score> = mutableListOf()
     var bananas = 0
+    var ssb = SpannableStringBuilder()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,6 +26,14 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+//        ssb.append("long")
+//        ssb.setSpan(
+//            ImageSpan(this, R.drawable.bananas),
+//            ssb.length - 1,
+//            ssb.length,
+//            0
+//        )
+//        ssb.append("$bananas")
 
 
         val navView: BottomNavigationView = binding.navView

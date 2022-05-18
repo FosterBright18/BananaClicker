@@ -1,6 +1,8 @@
 package com.foster.bananaclicker.ui
 
 import android.os.Bundle
+import android.text.SpannableStringBuilder
+import android.text.style.ImageSpan
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -39,7 +41,16 @@ class BananaFragment : Fragment() {
 
             binding.imageViewBananaBanana.startAnimation(AnimationUtils.loadAnimation(activity?.applicationContext, R.anim.button_click))
             mainActivity.bananas++
-            mainActivity.supportActionBar?.title = "${mainActivity.bananas} bananas"
+            val ssb = SpannableStringBuilder()
+            ssb.append("banana")
+            ssb.setSpan(
+                ImageSpan(requireContext(), R.drawable.bananas),
+                ssb.length - 1,
+                ssb.length,
+                0
+            )
+            ssb.append("$bananas")
+            mainActivity.supportActionBar?.title = "$ssb"
         }
 
         return root
