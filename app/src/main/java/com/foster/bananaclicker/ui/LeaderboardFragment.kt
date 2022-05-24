@@ -10,6 +10,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.foster.bananaclicker.MainActivity
 import com.foster.bananaclicker.databinding.FragmentLeaderboardBinding
+import kotlinx.coroutines.Job
 
 
 class LeaderboardFragment : Fragment() {
@@ -38,7 +39,7 @@ class LeaderboardFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         var mainActivity = requireActivity() as MainActivity
-        mainActivity.supportActionBar?.title = "${mainActivity.bananas} bananas"
+        mainActivity.supportActionBar?.title = "You have ${mainActivity.bananas} bananas"
 
     }
 

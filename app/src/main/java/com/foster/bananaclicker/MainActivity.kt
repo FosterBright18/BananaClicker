@@ -17,6 +17,13 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private var scores : MutableList<Score> = mutableListOf()
     var bananas = 0
+    var monkeys = 0
+    var trees = 0
+    var cows = 0
+    var bananaClick = 1
+    var monkeyUp = 1
+    var cowUp = 1
+    var treeUp = 1
     var ssb = SpannableStringBuilder()
 
 

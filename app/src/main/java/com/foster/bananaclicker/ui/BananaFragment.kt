@@ -30,9 +30,9 @@ class BananaFragment : Fragment() {
     // onDestroyView.
     private val binding get() = _binding!!
     private var bananas = 0
-    private var monkeys = 0
-    private var trees = 0
-    private var cows = 0
+    var monkeyPrice = 10.00
+    var treePrice = 200.00
+    var cowPrice = 1000.00
     lateinit var mainActivity : MainActivity
 
     override fun onCreateView(
@@ -49,7 +49,7 @@ class BananaFragment : Fragment() {
         }
 
         fun getAuto() {
-            mainActivity.bananas += monkeys * 1 + trees * 5 + cows * 100
+            mainActivity.bananas += mainActivity.monkeys * 1 + mainActivity.trees * 5 + mainActivity.cows * 100
             mainActivity.supportActionBar?.title = "You have ${mainActivity.bananas} bananas"
         }
 
@@ -77,7 +77,7 @@ class BananaFragment : Fragment() {
                 on == true
             }
 
-            mainActivity.bananas++
+            mainActivity.bananas += mainActivity.bananaClick
             val ssb = SpannableStringBuilder()
             ssb.append("banana")
             ssb.setSpan(
@@ -94,7 +94,6 @@ class BananaFragment : Fragment() {
         }
 
         binding.imageViewBananaMonkey.setOnClickListener{
-            var monkeyPrice = 10.00
             var on = true
             if(on){
                 on == false
@@ -102,17 +101,16 @@ class BananaFragment : Fragment() {
                 on == true
             }
             if(mainActivity.bananas >= monkeyPrice.toInt()){
-                monkeys++
+                mainActivity.monkeys++
                 mainActivity.bananas -= monkeyPrice.toInt()
-                monkeyPrice += 2 * monkeys * monkeys
+                monkeyPrice += 2 * mainActivity.monkeys * mainActivity.monkeys
                 binding.textViewBananaMonkeyDesc.text = "Monkey - Cost ${monkeyPrice.toInt()} bananas" +
-                        "\nGives 1 banana per second\nYou currently have: $monkeys"
+                        "\nGives 1 banana per second\nYou currently have: ${mainActivity.monkeys}"
             }
             mainActivity.supportActionBar?.title = "You have ${mainActivity.bananas} bananas"
         }
 
         binding.imageViewBananaBananaTree.setOnClickListener {
-            var treePrice = 200.00
             var on = true
             if(on){
                 on == false
@@ -120,17 +118,16 @@ class BananaFragment : Fragment() {
                 on == true
             }
             if(mainActivity.bananas >= treePrice){
-                trees++
+                mainActivity.trees++
                 mainActivity.bananas -= treePrice.toInt()
-                treePrice += 2 * trees * trees
+                treePrice += 2 * mainActivity.trees * mainActivity.trees
                 binding.textViewBananaTreedesc.text = "Banana Tree - Cost ${treePrice.toInt()} bananas" +
-                        "\nGives 5 bananas per second\nYou currently have: $trees"
+                        "\nGives 5 bananas per second\nYou currently have: ${mainActivity.trees}"
             }
             mainActivity.supportActionBar?.title = "You have ${mainActivity.bananas} bananas"
         }
 
         binding.imageViewBananaBananaCow.setOnClickListener {
-            var cowPrice = 1000.00
             var on = true
             if(on){
                 on == false
@@ -138,11 +135,11 @@ class BananaFragment : Fragment() {
                 on == true
             }
             if(mainActivity.bananas >= cowPrice){
-                cows++
+                mainActivity.cows++
                 mainActivity.bananas -=cowPrice.toInt()
-                cowPrice += 2 * cows * cows
+                cowPrice += 2 * mainActivity.cows * mainActivity.cows
                 binding.textViewBananaBananaCowDesc.text = "Banana Cow - Cost ${cowPrice.toInt()} bananas" +
-                        "\nGives 100 bananas per second\nYou currently have: $cows"
+                        "\nGives 100 bananas per second\nYou currently have: ${mainActivity.cows}"
             }
             mainActivity.supportActionBar?.title = "You have ${mainActivity.bananas} bananas"
         }

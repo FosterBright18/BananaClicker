@@ -62,7 +62,7 @@ class StatsFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         var mainActivity = requireActivity() as MainActivity
-        mainActivity.supportActionBar?.title = "${mainActivity.bananas} bananas"
+        mainActivity.supportActionBar?.title = "You have ${mainActivity.bananas} bananas"
 
     }
 
