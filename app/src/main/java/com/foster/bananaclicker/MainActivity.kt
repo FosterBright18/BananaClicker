@@ -24,6 +24,10 @@ class MainActivity : AppCompatActivity() {
     var monkeyUp = 1
     var cowUp = 1
     var treeUp = 1
+    var bananaUpPrice = 150
+    var monkeyUpPrice = 700
+    var treeUpPrice = 1500
+    var cowUpPrice = 5000
     var ssb = SpannableStringBuilder()
 
 

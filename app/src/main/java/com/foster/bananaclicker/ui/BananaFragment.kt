@@ -31,8 +31,8 @@ class BananaFragment : Fragment() {
     private val binding get() = _binding!!
     private var bananas = 0
     var monkeyPrice = 10.00
-    var treePrice = 200.00
-    var cowPrice = 1000.00
+    var treePrice = 300.00
+    var cowPrice = 2000.00
     lateinit var mainActivity : MainActivity
 
     override fun onCreateView(
@@ -104,8 +104,7 @@ class BananaFragment : Fragment() {
                 mainActivity.monkeys++
                 mainActivity.bananas -= monkeyPrice.toInt()
                 monkeyPrice += 2 * mainActivity.monkeys * mainActivity.monkeys
-                binding.textViewBananaMonkeyDesc.text = "Monkey - Cost ${monkeyPrice.toInt()} bananas" +
-                        "\nGives 1 banana per second\nYou currently have: ${mainActivity.monkeys}"
+                updateTextViews()
             }
             mainActivity.supportActionBar?.title = "You have ${mainActivity.bananas} bananas"
         }
@@ -121,8 +120,7 @@ class BananaFragment : Fragment() {
                 mainActivity.trees++
                 mainActivity.bananas -= treePrice.toInt()
                 treePrice += 2 * mainActivity.trees * mainActivity.trees
-                binding.textViewBananaTreedesc.text = "Banana Tree - Cost ${treePrice.toInt()} bananas" +
-                        "\nGives 5 bananas per second\nYou currently have: ${mainActivity.trees}"
+                updateTextViews()
             }
             mainActivity.supportActionBar?.title = "You have ${mainActivity.bananas} bananas"
         }
@@ -136,10 +134,9 @@ class BananaFragment : Fragment() {
             }
             if(mainActivity.bananas >= cowPrice){
                 mainActivity.cows++
-                mainActivity.bananas -=cowPrice.toInt()
+                mainActivity.bananas -= cowPrice.toInt()
                 cowPrice += 2 * mainActivity.cows * mainActivity.cows
-                binding.textViewBananaBananaCowDesc.text = "Banana Cow - Cost ${cowPrice.toInt()} bananas" +
-                        "\nGives 100 bananas per second\nYou currently have: ${mainActivity.cows}"
+                updateTextViews()
             }
             mainActivity.supportActionBar?.title = "You have ${mainActivity.bananas} bananas"
         }
@@ -148,12 +145,25 @@ class BananaFragment : Fragment() {
         return root
     }
 
+    private fun updateTextViews() {
+        binding.textViewBananaIncome.text = "Bananas per second:\n" +
+                "${mainActivity.monkeys * 1 + mainActivity.trees * 5 + mainActivity.cows * 100}" +
+                "\nBananas per click:\n${mainActivity.bananaClick}"
+        binding.textViewBananaMonkeyDesc.text = "Monkey - Cost ${monkeyPrice.toInt()} bananas" +
+                "\nGives 1 banana per second\nYou currently have: ${mainActivity.monkeys}"
+        binding.textViewBananaTreedesc.text = "Banana Tree - Cost ${treePrice.toInt()} bananas" +
+                "\nGives 5 bananas per second\nYou currently have: ${mainActivity.trees}"
+        binding.textViewBananaBananaCowDesc.text = "Banana Cow - Cost ${cowPrice.toInt()} bananas" +
+                "\nGives 100 bananas per second\nYou currently have: ${mainActivity.cows}"
+
+    }
+
 
     override fun onResume() {
         super.onResume()
         //mainActivity.supportActionBar?.title = "${R.drawable.bananas}${mainActivity.bananas} bananas"
 
-
+        updateTextViews()
 
     }
 

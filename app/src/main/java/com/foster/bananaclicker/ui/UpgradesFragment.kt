@@ -21,10 +21,14 @@ class UpgradesFragment : Fragment() {
     // onDestroyView.
     private val binding get() = _binding!!
     lateinit var mainActivity : MainActivity
-    private var bananaUp = 1
-    private var monkeyUp = 1
-    private var treeUp = 1
-    private var cowUp = 1
+    private var bananaUp = mainActivity.bananaClick
+    private var monkeyUp = mainActivity.monkeyUp
+    private var treeUp = mainActivity.treeUp
+    private var cowUp = mainActivity.cowUp
+    private var bananaUpPrice = mainActivity.bananaUpPrice
+    private var monkeyUpPrice = mainActivity.monkeyUpPrice
+    private var treeUpPrice = mainActivity.treeUpPrice
+    private var cowUpPrice = mainActivity.cowUpPrice
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -38,59 +42,63 @@ class UpgradesFragment : Fragment() {
 
 
         binding.imageViewUpgradesBanana.setOnClickListener{
-            if((mainActivity.bananas >= (150 * bananaUp).toInt())){
+            if((mainActivity.bananas >= (bananaUpPrice).toInt())){
                 var on = true
                 if(on){
                     on == false
                     binding.imageViewUpgradesBanana.startAnimation(AnimationUtils.loadAnimation(activity?.applicationContext, R.anim.button_click))
                     on == true
                 }
+                mainActivity.bananas -= bananaUpPrice
                 mainActivity.bananaClick++
                 bananaUp++
-                binding.textViewUpgradesBananaDesc.text = "Banana clicks give $bananaUp" +
-                        " times as many bananas as usual\\nCost ${150 * bananaUp} bananas"
+                bananaUpPrice *= bananaUp
+                updateTextViews()
             }
         }
         binding.imageViewUpgradesMonkey.setOnClickListener{
-            if((mainActivity.bananas >= (700 * monkeyUp).toInt())){
+            if((mainActivity.bananas >= (monkeyUpPrice).toInt())){
                 var on = true
                 if(on){
                     on == false
                     binding.imageViewUpgradesMonkey.startAnimation(AnimationUtils.loadAnimation(activity?.applicationContext, R.anim.button_click))
                     on == true
                 }
+                mainActivity.bananas -= monkeyUpPrice
                 mainActivity.monkeyUp++
                 monkeyUp++
-                binding.textViewUpgradesMonkeyDesc.text = "Monkeys give $monkeyUp" +
-                        " times as many bananas as usual\\nCost ${700 * monkeyUp} bananas"
+                monkeyUpPrice *= monkeyUp
+                updateTextViews()
             }
         }
         binding.imageViewUpgradesCow.setOnClickListener{
-            if((mainActivity.bananas >= (1500 * cowUp).toInt())){
+            if((mainActivity.bananas >= (cowUpPrice).toInt())){
                 var on = true
                 if(on){
                     on == false
                     binding.imageViewUpgradesCow.startAnimation(AnimationUtils.loadAnimation(activity?.applicationContext, R.anim.button_click))
                     on == true
                 }
+                mainActivity.bananas -= cowUpPrice
                 mainActivity.cowUp++
                 cowUp++
-                binding.textViewUpgradesCowDesc.text = "Banana cow gives $cowUp" +
-                        " times as many bananas as usual\\nCost ${1500 * cowUp} bananas"
+                cowUpPrice *= cowUp
+                updateTextViews()
             }
         }
         binding.imageViewUpgradesTree.setOnClickListener{
-            if((mainActivity.bananas >= (5000 * treeUp).toInt())){
+            if((mainActivity.bananas >= (20000 * treeUpPrice).toInt())){
                 var on = true
                 if(on){
                     on == false
                     binding.imageViewUpgradesTree.startAnimation(AnimationUtils.loadAnimation(activity?.applicationContext, R.anim.button_click))
                     on == true
                 }
+                mainActivity.bananas -= treeUpPrice
                 mainActivity.treeUp++
                 treeUp++
-                binding.textViewUpgradesTreeDesc.text = "Banana tree gives $treeUp" +
-                        " times as many bananas as usual\\nCost ${5000 * treeUp} bananas"
+                treeUpPrice *= treeUp
+                updateTextViews()
             }
         }
 
@@ -98,12 +106,27 @@ class UpgradesFragment : Fragment() {
         return root
     }
 
+    private fun updateTextViews() {
+        binding.textViewUpgradesBananaDesc.text = "Banana clicks give $bananaUp" +
+                " times as many bananas as usual\nCost ${bananaUpPrice} bananas"
+        mainActivity.bananaClick = bananaUpPrice
+        binding.textViewUpgradesMonkeyDesc.text = "Monkeys give $monkeyUp" +
+                " times as many bananas as usual\nCost ${monkeyUpPrice} bananas"
+        mainActivity.monkeyUpPrice = monkeyUpPrice
+        binding.textViewUpgradesCowDesc.text = "Banana cow gives $cowUp" +
+                " times as many bananas as usual\nCost ${cowUpPrice} bananas"
+        mainActivity.cowUpPrice = cowUpPrice
+        binding.textViewUpgradesTreeDesc.text = "Banana tree gives $treeUp" +
+                " times as many bananas as usual\nCost ${treeUpPrice} bananas"
+        mainActivity.treeUpPrice = treeUpPrice
+    }
 
 
     override fun onResume() {
         super.onResume()
         var mainActivity = requireActivity() as MainActivity
         mainActivity.supportActionBar?.title = "You have ${mainActivity.bananas} bananas"
+        updateTextViews()
 
     }
 
