@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -21,14 +22,14 @@ class UpgradesFragment : Fragment() {
     // onDestroyView.
     private val binding get() = _binding!!
     lateinit var mainActivity : MainActivity
-    private var bananaUp = mainActivity.bananaClick
-    private var monkeyUp = mainActivity.monkeyUp
-    private var treeUp = mainActivity.treeUp
-    private var cowUp = mainActivity.cowUp
-    private var bananaUpPrice = mainActivity.bananaUpPrice
-    private var monkeyUpPrice = mainActivity.monkeyUpPrice
-    private var treeUpPrice = mainActivity.treeUpPrice
-    private var cowUpPrice = mainActivity.cowUpPrice
+    private var bananaUp = 0
+    private var monkeyUp = 0
+    private var treeUp = 0
+    private var cowUp = 0
+    private var bananaUpPrice = 0
+    private var monkeyUpPrice = 0
+    private var treeUpPrice = 0
+    private var cowUpPrice = 0
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -39,6 +40,14 @@ class UpgradesFragment : Fragment() {
         _binding = FragmentUpgradesBinding.inflate(inflater, container, false)
         val root: View = binding.root
         mainActivity = requireActivity() as MainActivity
+        bananaUp = mainActivity.bananaClick
+        monkeyUp = mainActivity.monkeyUp
+        treeUp = mainActivity.treeUp
+        cowUp = mainActivity.cowUp
+        bananaUpPrice = mainActivity.bananaUpPrice
+        monkeyUpPrice = mainActivity.monkeyUpPrice
+        treeUpPrice = mainActivity.treeUpPrice
+        cowUpPrice = mainActivity.cowUpPrice
 
 
         binding.imageViewUpgradesBanana.setOnClickListener{
@@ -109,7 +118,7 @@ class UpgradesFragment : Fragment() {
     private fun updateTextViews() {
         binding.textViewUpgradesBananaDesc.text = "Banana clicks give $bananaUp" +
                 " times as many bananas as usual\nCost ${bananaUpPrice} bananas"
-        mainActivity.bananaClick = bananaUpPrice
+        mainActivity.bananaUpPrice = bananaUpPrice
         binding.textViewUpgradesMonkeyDesc.text = "Monkeys give $monkeyUp" +
                 " times as many bananas as usual\nCost ${monkeyUpPrice} bananas"
         mainActivity.monkeyUpPrice = monkeyUpPrice

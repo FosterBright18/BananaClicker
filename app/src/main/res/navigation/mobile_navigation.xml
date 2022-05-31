@@ -17,15 +17,4 @@
         android:label="Upgrades"
         tools:layout="@layout/fragment_upgrades" />
 
-    <fragment
-        android:id="@+id/navigation_stats"
-        android:name="com.foster.bananaclicker.ui.StatsFragment"
-        android:label="Stats"
-        tools:layout="@layout/fragment_stats" />
-
-    <fragment
-        android:id="@+id/navigation_leaderboard"
-        android:name="com.foster.bananaclicker.ui.LeaderboardFragment"
-        android:label="Leaderboard"
-        tools:layout="@layout/fragment_leaderboard"/>
 </navigation>

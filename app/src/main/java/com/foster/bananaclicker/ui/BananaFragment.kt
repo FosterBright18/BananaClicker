@@ -78,16 +78,6 @@ class BananaFragment : Fragment() {
             }
 
             mainActivity.bananas += mainActivity.bananaClick
-            val ssb = SpannableStringBuilder()
-            ssb.append("banana")
-            ssb.setSpan(
-                ImageSpan(requireContext(), R.drawable.bananas),
-                ssb.length - 1,
-                ssb.length,
-                0
-            )
-            ssb.append("$bananas")
-            //mainActivity.supportActionBar?.title = "$ssb"
             mainActivity.supportActionBar?.title = "You have ${mainActivity.bananas} bananas"
             bananas = mainActivity.bananas
 

@@ -11,14 +11,4 @@
         android:icon="@drawable/ic_baseline_upgrade_24"
         android:title="Upgrades" />
 
-    <item
-        android:id="@+id/navigation_stats"
-        android:icon="@drawable/ic_baseline_timeline_24"
-        android:title="Stats" />
-
-    <item
-        android:id="@+id/navigation_leaderboard"
-        android:icon="@drawable/ic_baseline_leaderboard_24"
-        android:title="Leaderboard" />
-
 </menu>

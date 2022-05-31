@@ -28,8 +28,6 @@ class MainActivity : AppCompatActivity() {
     var monkeyUpPrice = 700
     var treeUpPrice = 1500
     var cowUpPrice = 5000
-    var ssb = SpannableStringBuilder()
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,7 +52,7 @@ class MainActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         val appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.navigation_banana, R.id.navigation_upgrades, R.id.navigation_stats, R.id.navigation_leaderboard
+                R.id.navigation_banana, R.id.navigation_upgrades
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
